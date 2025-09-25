@@ -1,0 +1,36 @@
+package FreshStart_Integer;
+
+public class MaxConsecutiveOnes {
+    public static void main(String[] args) {
+        int[] nums = {0, 0, 1, 1, 0, 0, 0, 0, 1};
+        System.out.println("Maximum consecutive 1s: " + findMaxConsecutiveOnes(nums));
+    }
+
+    public static int findMaxConsecutiveOnes(int[] nums) {
+
+        // edge case check
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int currentCount = 0;
+        int maxCount = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                currentCount++;
+                maxCount = Math.max(currentCount, maxCount);
+            } else {
+                currentCount = 0;
+            }
+        }
+
+        return maxCount;
+
+
+
+    }
+
+
+
+}
